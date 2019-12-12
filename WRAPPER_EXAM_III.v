@@ -254,6 +254,7 @@ assign i = a;
 odd_parity oddp1(clk, rst, a);
 exp exp1();
 pop_count pc1();
+pop_count pc2();
 
 parameter
 	INIT1 = 3'b0,
