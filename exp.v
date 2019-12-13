@@ -1,4 +1,4 @@
-module exp(clk, c, j, g, start, done);
+module exp(clk, c, j, g, start, done, enable);
 wire S, NS;
 reg [15:0]exp=16'b0;
 reg [15:0]temp;
@@ -18,7 +18,7 @@ always @(posedge clk)
 begin
   case(S)
 	INIT:begin 
-		  if(start == 1'b1)
+		if(start == 1'b1 and enable==1'b1)
 		  begin
 			  temp<= c; //C
 			  exp<= 16'd0;
