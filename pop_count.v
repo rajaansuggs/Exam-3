@@ -1,4 +1,4 @@
-module pop_count(g, c, a)
+module pop_count1(g, c, a)
 input a, c, g;
 wire pop;
 assign pop = g+a;
