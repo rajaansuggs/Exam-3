@@ -253,10 +253,11 @@ wire i;
 wire j;
 assign i = a;
 assign enable = 1'd0;
+	
 odd_parity oddp1(start, done, a, enable);
-exp exp1();
-pop_count pc1();
-pop_count pc2();
+exp exp1(clk, c, j, g, start, done, enable);
+pop_count1 pc1(g, c, a);
+pop_count2 pc2(h, c);
 
 parameter
 	INIT1 = 3'd0,
