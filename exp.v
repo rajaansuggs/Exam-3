@@ -1,4 +1,4 @@
-module exp(start, c, j,)
+module exp(c, j, g, start, done)
 wire S, NS;
 reg [15:0]exp=16'b0;
 reg [15:0]temp;
