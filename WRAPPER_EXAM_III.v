@@ -248,11 +248,12 @@ reg[2:0]NS;
 input start;
 output done;
 reg done;
-wire enable = 1
+wire enable;	
 wire i;
 wire j;
 assign i = a;
-odd_parity oddp1(clk, rst, a);
+assign enable = 1'd0;
+odd_parity oddp1(start, done, a, enable);
 exp exp1();
 pop_count pc1();
 pop_count pc2();
@@ -305,7 +306,8 @@ always @(*)
 		DONE: NS= DONE;
 	endcase
 always @(*)
-	case(S)
+	case(S):
+		
 		
 endmodule
 //=======================================================
