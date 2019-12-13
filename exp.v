@@ -5,6 +5,7 @@ reg [15:0]temp;
 reg [1:0]S=2'b0;
 reg [1:0]NS;	
 assign p=0;
+output[15:0]g;
 parameter
   INIT=2'd0
   COND=2'd1
