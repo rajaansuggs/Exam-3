@@ -1,6 +1,6 @@
 module pop_count2(h, c)
 output[15:0]h;
-assign pop = g+a;
+assign pop = c+c;
     always@(*)begin
     if(start == 1'b1)
       begin
