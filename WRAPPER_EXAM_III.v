@@ -248,6 +248,7 @@ reg[2:0]NS;
 input start;
 output done;
 reg done;
+wire enable = 1
 wire i;
 wire j;
 assign i = a;
@@ -257,14 +258,14 @@ pop_count pc1();
 pop_count pc2();
 
 parameter
-	INIT1 = 3'b0,
-	COND1 = 3'b1,
-	ITER1 = 3'b2,
-	INIT2 = 3'b3,
-	COND2 = 3'b4,
-	ITER2 = 3'b5,
-	THREEMODS = 3'b6,
-	DONE = 3'b7
+	INIT1 = 3'd0,
+	COND1 = 3'd1,
+	ITER1 = 3'd2,
+	INIT2 = 3'd3,
+	COND2 = 3'd4,
+	ITER2 = 3'd5,
+	THREEMODS = 3'd6,
+	DONE = 3'd7;
 
 always @(posedge clk or negedge rst)
 	if (rst == 1'b0)
@@ -280,8 +281,8 @@ always @(posedge clk or negedge rst)
 		begin
 			S<=NS;
 			g <= a + b;
-			h <= c + d + 1'b1;
-			done <= 1'b1;
+			h <= c + d + 1'd1;
+			done <= 1'd1;
 		end
 	end
 always @(*)
