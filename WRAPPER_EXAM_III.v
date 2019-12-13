@@ -284,7 +284,7 @@ always @(posedge clk or negedge rst)
 			S<=NS;
 			g <= a + b;
 			h <= c + d + 1'd1;
-			done <= 1'd1;
+			
 		end
 	end
 always @(*)
@@ -307,7 +307,10 @@ always @(*)
 		DONE: NS= DONE;
 	endcase
 always @(*)
-	case(S):
+	if(start==1'b1)
+		case(S):
+			DONE:done <= 1'd1;
+		
 		
 		
 endmodule
